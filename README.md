@@ -38,3 +38,5 @@ cd [magento_installation_path]
 bin/magento mod:dis ProfStep_MessagesGraphQl
 composer config --unset repositories.messenger-graph-ql
 ```
+## React App
+This extension can be integrates with [React App](https://github.com/Maxikkkk/react-messenger).
