@@ -17,13 +17,13 @@ Extension requires **Magento 2.4+ version**
 cd [magento_installation_path]
 mkdir profstep
 git clone https://github.com/Maxikkkk/messenger
-composer config repositories.profstep-messages path ./profstep/profstep-messages
+composer config repositories.profstep-messages path ./messenger/profstep-messages
 composer require profstep/module-messages
 bin/magento mod:en ProfStep_Messages
 ```
 For GraphQl extension
 ```sh
-composer config repositories.profstep-messages-graph-ql path ./profstep/profstep-messages
+composer config repositories.profstep-messages-graph-ql path ./messenger/profstep-messages
 composer require profstep/module-messages-graph-ql
 bin/magento mod:en ProfStep_MessagesGraphQl
 ```
