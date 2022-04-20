@@ -1,6 +1,4 @@
 # messenger
-Simpele Magento 2 Messenger Extension
-
 Simple Magento 2 extension that help you to send messages on your friends email!
 
 ## Features 
