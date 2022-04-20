@@ -1,0 +1,56 @@
+<?php
+
+declare(strict_types=1);
+/**
+ * @by ProfStep, inc. 11.03.2022
+ * @website: https://profstep.com
+ */
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use ProfStep\Messages\ViewModel\Messenger;
+
+/** @var Template $block */
+
+/** @var Messenger $viewModel */
+$viewModel = $block->getData('viewModel');
+
+?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "form-component": {
+                        "component": "ProfStep_Messages/js/form/form-component",
+                        "template": "ProfStep_Messages/form",
+                        "templateNotice": "ProfStep_Messages/form-notice"
+                    }
+                }
+            }
+        },
+        "#messenger-form": {
+            "ProfStep_Messages/js/form/form-validate": {}
+        }
+    }
+</script>
+
+<!-- ko scope: 'form-component' -->
+    <!-- ko if: isLoggedIn() -->
+        <!-- ko template: getNoticeTemplate()  -->
+        <!-- /ko -->
+    <!-- /ko -->
+    <fieldset class="messenger-fieldset" >
+        <legend class="messenger-fieldset-title">
+            <span class="field-title-text">
+                Send message to your friend!
+            </span>
+        </legend>
+        <form id="messenger-form" class="messenger-fieldset-form" action="index/add" method="POST">
+            <?= $block->getChildHtml('form_key'); ?>
+            <!-- ko template: { name: getTemplate(), afterRender: afterTemplateRender } -->
+            <!-- /ko -->
+        </form>
+    </fieldset>
+<!-- /ko -->

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="ProfStep\MessagesGraphQl\Model\Resolver\MessagesResolver">
+        <arguments>
+            <argument name="providers" xsi:type="array">
+                <item name="getMessage" xsi:type="object">ProfStep\MessagesGraphQl\Model\Resolver\DataProviders\GetMessageProvider</item>
+                <item name="getList" xsi:type="object">ProfStep\MessagesGraphQl\Model\Resolver\DataProviders\GetMessagesListProvider</item>
+                <item name="getAllMessages" xsi:type="object">ProfStep\MessagesGraphQl\Model\Resolver\DataProviders\GetAllMessagesProvider</item>
+                <item name="createMessage" xsi:type="object">ProfStep\MessagesGraphQl\Model\Resolver\DataProviders\CreateMessageResolver</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

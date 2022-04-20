@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="profstep_messages" resource="default" engine="innodb" comment="ProfStep Messages table">
+        <column name="id" xsi:type="int" unsigned="true" identity="true" nullable="false" comment="Message ID" />
+        <column name="fullname" xsi:type="varchar" length="255" nullable="true" comment="Message Fullname" />
+        <column name="email" xsi:type="varchar" length="255" nullable="true" comment="Message Email" />
+        <column name="message" xsi:type="varchar" length="255" nullable="true" comment="Message Text" />
+        <column name="updated_at" xsi:type="datetime" default="CURRENT_TIMESTAMP" nullable="false" comment="Message Updated At time" />
+        <column name="created_at" xsi:type="datetime" default="CURRENT_TIMESTAMP" nullable="false" comment="Message Created At time" />
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+</schema>

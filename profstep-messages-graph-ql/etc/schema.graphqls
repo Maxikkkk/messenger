@@ -1,0 +1,57 @@
+type Query {
+    getMessage(id: Int!): Message @resolver(class: "ProfStep\\MessagesGraphQl\\Model\\Resolver\\MessagesResolver") @doc(description: "Get message")
+    getList(
+        filter_groups: [MessagesFilterGroups!]
+        pageSize: Int
+        currentPage: Int
+        sort: MessagesSortInput
+    ): [Message] @resolver(class: "ProfStep\\MessagesGraphQl\\Model\\Resolver\\MessagesResolver") @doc(description: "Get list of messages")
+    getAllMessages: [Message] @resolver(class: "ProfStep\\MessagesGraphQl\\Model\\Resolver\\MessagesResolver") @doc(description: "Get all messages")
+    createMessage(data: CreateMessage!): Message @resolver(class: "ProfStep\\MessagesGraphQl\\Model\\Resolver\\MessagesResolver") @doc(description: "Create message")
+}
+type Message @doc(description: "Defines message structure") {
+    id: Int @doc(description: "Message id")
+    fullname: String @doc(description: "Message fullname")
+    message: String @doc(description: "Message body text")
+    email: String @doc(description: "Recipient email address")
+    updated_at: String @doc(description: "Updated at date")
+    created_at: String @doc(description: "Creat at date")
+}
+
+enum FilterTypes {
+    eq
+    from
+    gt
+    gteq
+    in
+    like
+    lt
+    lteq
+    moreq
+    neq
+    notnull
+    null
+    to
+    nin
+}
+
+input CreateMessage {
+    fullname: String! @doc(description: "Message fullname")
+    email: String! @doc(description: "Message email")
+    message: String! @doc(description: "Message message")
+}
+
+input MessagesFilterGroups {
+    filters: [FilterField!]
+}
+
+input FilterField {
+    field: String! @doc(description: "Field")
+    value: String! @doc(description: "Value")
+    condition_type: FilterTypes! @doc(description: "Condition type")
+}
+
+input MessagesSortInput @doc(description: "Sort messages") {
+    relevance: SortEnum @doc(description: "Sort by the search relevance score (default).")
+    position: SortEnum @doc(description: "Sort by the position assigned to each product.")
+}

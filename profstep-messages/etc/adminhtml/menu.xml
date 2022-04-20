@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="ProfStep_Messages::extensions"
+             title="ProfStep"
+             module="ProfStep_Messages"
+             resource="ProfStep_Messages::extensions"
+             sortOrder="10"
+        />
+        <add id="ProfStep_Messages::grid"
+             title="Messenger"
+             module="ProfStep_Messages"
+             resource="ProfStep_Messages::messenger"
+             sortOrder="10"
+             parent="ProfStep_Messages::extensions"
+             action="messenger"
+             dependsOnConfig="messenger/config/enabled"
+        />
+    </menu>
+</config>

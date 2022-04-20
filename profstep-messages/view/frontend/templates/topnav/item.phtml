@@ -1,0 +1,26 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use ProfStep\Messages\ViewModel\Link;
+
+/**
+ * @var $block \Magento\Framework\View\Element\Html\Link
+ */
+
+/** @var Link $viewModel */
+$viewModel = $block->getData('viewModel');
+
+?>
+
+<?php if($viewModel->isEnabled()): ?>
+    <li class="level0 category-item last level-top ui-menu-item" role="presentation">
+        <a href="<?= $block->getHref() ?>" class="level-top ui-corner-all" id="ui-id-7" tabindex="-1" role="menuitem">
+            <span class="level-top ui-corner-all">
+                <?= $block->getData('label'); ?>
+            </span>
+        </a>
+    </li>
+<?php endif; ?>
