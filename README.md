@@ -26,7 +26,6 @@ bin/magento mod:en ProfStep_MessagesGraphQl
 ```
 
 ## Uninstall
-Extension requires **Magento 2.4+ version**
 
 ```sh
 cd [magento_installation_path]
