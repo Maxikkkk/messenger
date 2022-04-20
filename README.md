@@ -11,7 +11,7 @@ Simple Magento 2 extension that help you to send messages on your friends email!
 - REST, SOAP APIs and additional GraphQl extension
 
 ## Installation
-Extension requires **Magento 2 2.4+ version**
+Extension requires **Magento 2.4+ version**
 
 ```sh
 cd [magento_installation_path]
