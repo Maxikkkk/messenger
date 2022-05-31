@@ -31,13 +31,14 @@ bin/magento mod:en ProfStep_MessagesGraphQl
 cd [magento_installation_path]
 bin/magento mod:dis ProfStep_Messages
 composer config --unset repositories.messenger
+composer remove profstep/module-messages
 ```
 For GraphQl extension
 ```sh
 cd [magento_installation_path]
 bin/magento mod:dis ProfStep_MessagesGraphQl
 composer config --unset repositories.messenger-graph-ql
-composer remove profstep/module-messages
+composer remove profstep/module-messages-graph-ql
 ```
 ## React App
 This extension can be integrates with [React App](https://github.com/Maxikkkk/react-messenger).
